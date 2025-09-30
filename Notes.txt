@@ -1,0 +1,4 @@
+python -m venv env -> creates env
+source env/bin/activate -> activates env
+pip install flask -> installs flask in env
+flask run -> starts flask

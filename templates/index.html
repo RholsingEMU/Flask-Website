@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block linkStyle %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+{% endblock %}
+
+{% block body %}
+<!--Please ignrore the image. It is a placeholder.-->
+    <main class="container">
+        <div class="grid">
+            <div class="tags">
+                tags
+            </div>
+            <div class="sort">
+                Sort by:
+                <fieldset class="sort-dropdown">
+                    <label>
+                        <input type="radio" name="post-sort" checked />
+                        Top this week
+                    </label>
+                    <label>
+                        <input type="radio" name="post-sort" />
+                        Top of all time
+                    </label>
+                    <label>
+                        <input type="radio" name="post-sort" />
+                        New
+                    </label>
+                    <label>
+                        <input type="radio" name="post-sort" />
+                        Hot
+                    </label>
+                </fieldset>
+            </div>
+        </div>
+        <hr></hr>
+        <div class="grid">
+            <a href="profile.html">
+                <div class="post-image">
+                    <img src="https://media.tenor.com/ua7A0OJQqpQAAAAe/waga-baga-bobo.png" height="350" width="350"/>
+                </div>
+            </a>
+            <div class="post-content">
+                <button class="heart-btn">❤️</button>
+                <a href="profile.html">
+                    <h1>Title of the Post</h1>
+                </a>
+                <hr></hr>
+                <p>Desc of the post</p>
+            </div>
+        </div>
+
+        <div class="grid">
+            <a href="profile.html">
+                <div class="post-image">
+                    <img src="https://media.tenor.com/ua7A0OJQqpQAAAAe/waga-baga-bobo.png" height="350" width="350"/>
+                </div>
+            </a>
+            <div class="post-content">
+                <button class="heart-btn">❤️</button>
+                <a href="profile.html">
+                    <h1>Title of the Post</h1>
+                </a>
+                <hr></hr>
+                <p>Desc of the post</p>
+            </div>
+        </div>
+
+        <div class="grid">
+            <a href="profile.html">
+                <div class="post-image">
+                    <img src="https://media.tenor.com/ua7A0OJQqpQAAAAe/waga-baga-bobo.png" height="350" width="350"/>
+                </div>
+            </a>
+            <div class="post-content">
+                <button class="heart-btn">❤️</button>
+                <a href="profile.html">
+                    <h1>Title of the Post</h1>
+                </a>
+                <hr></hr>
+                <p>Desc of the post</p>
+            </div>
+        </div>
+    </main>
+{% endblock %}

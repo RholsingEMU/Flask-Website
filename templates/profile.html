@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block linkStyle %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='style-profile.css') }}">
+{% endblock %}
+
+{% block body %}
+    <main class="container">
+        <div class="grid">
+            <div class="top">
+                <div class="post-image">
+                    <img src="https://media.tenor.com/ua7A0OJQqpQAAAAe/waga-baga-bobo.png" height="350" width="350"/>
+                </div>
+                <div class="post-content">
+                    <h1>Title of the Post</h1>
+                    <ul>
+                        <li>List entry</li>
+                        <li>List entry</li>
+                    </ul>
+                    <p>Desc of the post</p>
+                    <div class="tag-box">
+                        <p class="no-margin">Box for tags</p>
+                    </div>
+                </div>
+            </div>
+            <hr></hr>
+            <div class="long-desc">
+                <p class="no-margin">Longer Desc</p>
+            </div>
+            <hr></hr>
+            <div class="top" class="no-margin">
+                <button class="download">
+                    <p class="no-margin">View Calendar</p>
+                </button>
+                <button class="message">
+                    <p  class="no-margin">Message</p>
+                </button>
+            </div>
+        </div>
+    </main>
+{% endblock %}

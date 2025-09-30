@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block linkStyle %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='style-create.css') }}">
+{% endblock %}
+
+{% block body %}
+        <main class="container">
+            <div class="grid">
+                <div class="post-image">
+                    <img src="https://media.tenor.com/ua7A0OJQqpQAAAAe/waga-baga-bobo.png" height="350" width="350"/>
+                </div>
+                <p class="upload-text">Upload Images</p>
+                <input type="file">
+                <!--<p style="margin-bottom: 0px;">Upload File</p>
+                <input type="file">-->
+
+                <input type="text" class="title" placeholder="Title" aria-label="Title">
+                <input type="text" class="post-text" placeholder="Post" aria-label="Post">
+                <div class="choose-tag">
+                    <p class="no-margin">Add tags...</p>
+                </div>
+                <button class="download">
+                    <p class="no-margin">Post</p>
+                </button>
+            </div>
+        </main>
+{% endblock %}
