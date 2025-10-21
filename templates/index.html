@@ -34,7 +34,25 @@
             </div>
         </div>
         <hr></hr>
+        {% for obj in profiles %}
         <div class="grid">
+            <a href="profile.html">
+                <div class="post-image">
+                    <img src="https://media.tenor.com/ua7A0OJQqpQAAAAe/waga-baga-bobo.png" height="350" width="350"/>
+                </div>
+            </a>
+            <div class="post-content">
+                <button class="heart-btn">{{ obj.likes }}❤️</button>
+                <a href="profile.html">
+                    <h1>{{ obj.name }}</h1>
+                </a>
+                <hr></hr>
+                <p>{{ obj.desc }}</p>
+            </div>
+        </div>
+        {% endfor %}
+
+        <!--<div class="grid">
             <a href="profile.html">
                 <div class="post-image">
                     <img src="https://media.tenor.com/ua7A0OJQqpQAAAAe/waga-baga-bobo.png" height="350" width="350"/>
@@ -64,22 +82,6 @@
                 <hr></hr>
                 <p>Desc of the post</p>
             </div>
-        </div>
-
-        <div class="grid">
-            <a href="profile.html">
-                <div class="post-image">
-                    <img src="https://media.tenor.com/ua7A0OJQqpQAAAAe/waga-baga-bobo.png" height="350" width="350"/>
-                </div>
-            </a>
-            <div class="post-content">
-                <button class="heart-btn">❤️</button>
-                <a href="profile.html">
-                    <h1>Title of the Post</h1>
-                </a>
-                <hr></hr>
-                <p>Desc of the post</p>
-            </div>
-        </div>
+        </div> -->
     </main>
 {% endblock %}

@@ -14,15 +14,16 @@
                 <input type="file">
                 <!--<p style="margin-bottom: 0px;">Upload File</p>
                 <input type="file">-->
-
-                <input type="text" class="title" placeholder="Title" aria-label="Title">
-                <input type="text" class="post-text" placeholder="Post" aria-label="Post">
                 <div class="choose-tag">
                     <p class="no-margin">Add tags...</p>
                 </div>
-                <button class="download">
-                    <p class="no-margin">Post</p>
-                </button>
+                <form method="POST" action="/submit">
+                    <input name="postName" type="text" class="title" placeholder="Title" aria-label="Title">
+                    <input name="postDesc" type="text" class="post-text" placeholder="Post" aria-label="Post">
+                    <button class="download" type="submit">
+                        <p class="no-margin">Post</p>
+                    </button>
+                </form>
             </div>
         </main>
 {% endblock %}
