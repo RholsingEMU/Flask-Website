@@ -1,118 +1,96 @@
 body {
-    background-color: #95B46A;
+    background-color: var(--bg);
 }
-.header {
-    position: sticky;
-    top: 0;
-    padding: 0px;
-    background: #413C58;
-    color: #413C58;
-    z-index: 1;
-}
+
 .no-margin {
     margin-bottom: 0 !important;
 }
-a {
-    text-decoration:none;
-}
+
 .upload-text {
     margin-bottom: 0px;
     align-self: flex-start;
     margin-left: 5%;
 }
+
 hr {
     height: 2px !important;
     border-width: 0;
-    color: #172815 !important;
-    background: #172815 !important;
+    color: var(--pico-color-slate-900) !important;
+    background: var(--pico-color-slate-900) !important;
     margin: 5px !important;
 }
+
 .grid {
     display: flex !important;
     flex-direction: column;
     align-items: center;
     border-style: solid;
     border-width: 2px;
-    border-color: #251F47;
+    border-color: var(--border);
     border-radius: 15px;
     padding: 10px;
     content: flex;
     margin-bottom: 10px;
-    box-shadow: 2px 2px 10px black;
-    background: #3E5622;
+    box-shadow: 2px 2px 10px var(--pico-color-black);
+    background: var(--grid);
 }
+
 .top {
     display: flex;
     gap: 10px;
     align-items: flex-start;
 }
+
 .title {
     margin-bottom: 0px;
 }
+
 .post-text {
     height: 100px;
 }
-.search {
-    position: center;
-    margin-bottom: 0px !important;
-    background: #709255;
-    color: white !important;
-}
+
 .post-image {
     padding: 10px;
     display: block !important;
     max-width: 350px;
     height: auto;
 }
+
 .choose-tag {
     border-style: solid;
     border-width: 2px;
-    border-color: #251F47;
+    border-color: var(--border);
     align-self: flex-start !important;
     width: 100%;
     border-radius: 15px;
     padding: 10px;
     content: flex;
     margin-bottom: 10px;
-    box-shadow: 2px 2px 10px black;
-    background: #3E5622;
+    box-shadow: 2px 2px 10px var(--pico-color-black);
+    background: var(--grid);
 }
+
 .download {
     border-style: solid;
     border-width: 2px;
-    border-color: lightgrey;
-    background: #709255;
+    border-color: var(--border) !important;
+    background: var(--button) !important;
     border-radius: 15px;
     padding: 10px;
     width: 30%;
 }
+
 .message {
     border-style: solid;
     border-width: 2px;
-    border-color: lightgrey;
+    border-color: var(--border);
     border-radius: 15px;
-    background: #709255;
+    background: var(--grid);
     padding: 10px;
     position: relative;
     width: 50%;
 }
-nav {
-    background-color: #404E7C;
-}
+
 .bodyTitle {
     padding: 15px;
-}
-footer {
-    text-align: center;
-}
-footer a {
-    text-decoration: none;
-    color: inherit;
-}
-.navbar {
-    margin-bottom: 0px;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    background: #172815;
 }

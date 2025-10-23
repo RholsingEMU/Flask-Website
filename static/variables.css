@@ -1,0 +1,12 @@
+:root {
+    --bg: var(--pico-color-cyan-950);
+    --border: var(--pico-color-cyan-900);
+    --grid: var(--pico-color-cyan-750);
+    --text: var(--pico-color-white);
+    --button: var(--pico-color-cyan-600);
+
+    --hbg: var(--pico-color-cyan-900);
+    --hborder: var(--pico-color-cyan-850);
+    --search: var(--pico-color-cyan-600);
+    --navbg: var(--pico-color-cyan-750);
+}

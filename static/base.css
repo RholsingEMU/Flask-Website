@@ -1,0 +1,49 @@
+footer {
+    text-align: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navbar {
+    margin-bottom: 0px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    background: var(--hbg);
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    padding: 0px;
+    background: var(--navbg);
+    color: var(--hbg);
+    z-index: 1;
+}
+
+a {
+    text-decoration: none;
+}
+
+.search {
+    position: center;
+    margin-bottom: 0px !important;
+    background: var(--search);
+    color: var(--text) !important;
+}
+
+.logo {
+    display: inline-block;
+    padding: 20px;
+}
+
+nav {
+    background-color: var(--navbg);
+}

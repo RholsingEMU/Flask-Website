@@ -1,114 +1,91 @@
 body {
-    background-color: #95B46A;
+    background-color: var(--bg);
 }
-.header {
-    position: sticky;
-    top: 0;
-    padding: 0px;
-    background: #413C58;
-    color: #413C58;
-    z-index: 1;
-}
+
 .no-margin {
     margin-bottom: 0 !important;
 }
-a {
-    text-decoration: none;
-}
+
 hr {
     height: 2px !important;
     border-width: 0;
-    color: #172815 !important;
-    background: #172815 !important;
+    color: var(--border) !important;
+    background: var(--border) !important;
     margin: 5px !important;
 }
+
 .grid {
     display: flex !important;
     flex-direction: column;
     align-items: stretch;
     border-style: solid;
     border-width: 2px;
-    border-color: #251F47;
+    border-color: var(--border);
     border-radius: 15px;
     padding: 10px;
     content: flex;
     margin-bottom: 10px;
-    box-shadow: 2px 2px 10px black;
-    background: #3E5622;
+    box-shadow: 2px 2px 10px var(--pico-color-black);
+    background: var(--grid);
 }
+
 .top {
     display: flex;
     gap: 10px;
     align-items: flex-start;
 }
+
 .long-desc {
     width: 100%;
     margin-bottom: 0px !important;
 }
-.search {
-    position: center;
-    margin-bottom: 0px !important;
-    background: #709255;
-    color: white !important;
-}
+
 .post-image {
     padding: 10px;
     display: block !important;
     max-width: 350px;
     height: auto;
 }
+
 .post-content {
     padding: 10px;
     margin-left: 15px;
     flex: 1 !important;
 }
+
 .tag-box {
     border-style: solid;
     border-width: 2px;
-    border-color: #251F47;
+    border-color: var(--pico-color-indigo-900);
     border-radius: 15px;
     padding: 10px;
     content: flex;
     margin-bottom: 10px;
-    box-shadow: 2px 2px 10px black;
-    background: #3E5622;
+    box-shadow: 2px 2px 10px var(--pico-color-black);
+    background: var(--pico-color-emerald-800);
 }
+
 .download {
     border-style: solid;
     border-width: 2px;
-    border-color: lightgrey;
-    background: #709255;
+    border-color: var(--border);
+    background: var(--grid);
     border-radius: 15px;
     padding: 10px;
     width: 50%;
 }
+
 .message {
     border-style: solid;
     border-width: 2px;
-    border-color: lightgrey;
+    border-color: var(--border);
     border-radius: 15px;
-    background: #709255;
+    background: var(--grid);
     padding: 10px;
     position: relative;
     width: 50%;
 }
-nav {
-    background-color: #404E7C;
-}
+
 .bodyTitle {
     padding: 15px;
-}
-footer {
-    text-align: center;
-}
-footer a {
-    text-decoration: none;
-    color: inherit;
-}
-.navbar {
-    margin-bottom: 0px;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    background: #172815;
 }
