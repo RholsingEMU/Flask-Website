@@ -9,7 +9,6 @@ class Profile:
     def __init__(self):
         pass
 
-
 p = [ Profile(), Profile(), Profile() ] #Make a list with an object in it
 
 app = Flask(__name__)
@@ -19,11 +18,11 @@ def home():
     return render_template("index.html", profiles=p)
 
 @app.route("/create-post")
-def waga():
+def create():
     return render_template("create.html")
 
 @app.route("/profile")
-def bobo():
+def profile():
     return render_template("profile.html")
 
 @app.route("/submit", methods=["POST"])

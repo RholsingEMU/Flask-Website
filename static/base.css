@@ -11,6 +11,13 @@ a {
     text-decoration: none;
 }
 
+hr {
+    height: 2px !important;
+    border-width: 0;
+    color: var(--border) !important;
+    background: var(--border) !important;
+}
+
 .navbar {
     margin-bottom: 0px;
     padding: 10px 20px;

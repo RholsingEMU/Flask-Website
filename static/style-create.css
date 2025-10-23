@@ -12,14 +12,6 @@ body {
     margin-left: 5%;
 }
 
-hr {
-    height: 2px !important;
-    border-width: 0;
-    color: var(--pico-color-slate-900) !important;
-    background: var(--pico-color-slate-900) !important;
-    margin: 5px !important;
-}
-
 .grid {
     display: flex !important;
     flex-direction: column;
