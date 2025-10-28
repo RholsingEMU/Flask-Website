@@ -9,9 +9,12 @@ flask run         	-> starts flask
 git commit -m "message" -> commit with a message
 git add . 		-> stage it i think. YOU HAVE TO DO THIS BEFORE COMMITTING
 && 			-> back to back commands
+git push --force -> Destructive, pushes reguardless of files missing
 
 ---In Order---
 add, commit, and stage
 
 git add . && git commit -m "Be descriptive"
 git push
+
+pip freeze -> Lists installed pip packages

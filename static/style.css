@@ -2,13 +2,6 @@ body {
     background-color: var(--bg);
 }
 
-hr {
-    height: 2px !important;
-    border-width: 0;
-    color: var(--border) !important;
-    background: var(--border) !important;
-}
-
 .grid {
     display: flex !important;
     align-items: flex-start;
