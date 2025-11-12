@@ -6,6 +6,13 @@ deactivate              -> deactivates env
 pip install flask 	-> installs flask in env
 flask run         	-> starts flask
 
+flask db migrate    -> Run when you make class changes
+&& flask db upgrade
+
+pip freeze -> Lists installed pip packages
+
+echo -n hello | sha256sum -> Generates hash of hello in Konsole
+
 git commit -m "message" -> commit with a message
 git add . 		-> stage it i think. YOU HAVE TO DO THIS BEFORE COMMITTING
 && 			-> back to back commands
@@ -16,5 +23,3 @@ add, commit, and stage
 
 git add . && git commit -m "Be descriptive"
 git push
-
-pip freeze -> Lists installed pip packages

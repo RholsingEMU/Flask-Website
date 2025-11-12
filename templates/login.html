@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block linkStyle %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='style-login.css') }}">
+{% endblock %}
+
+{% block body %}
+        <main class="container">
+            <div class="grid">
+                Log in to your account
+                <form method="POST" action="/submit">
+                    <input name="userName" type="text" class="title" placeholder="Title" aria-label="Title">
+                    <input name="userPassword" type="text" class="post-text" placeholder="Post" aria-label="Post">
+                    <button class="download" type="submit">
+                        <p class="no-margin">Post</p>
+                    </button>
+                </form>
+            </div>
+        </main>
+{% endblock %}
