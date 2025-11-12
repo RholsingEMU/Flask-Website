@@ -13,6 +13,12 @@ pip freeze -> Lists installed pip packages
 
 echo -n hello | sha256sum -> Generates hash of hello in Konsole
 
+import werkzeug.security
+a = generate_password_hash('myPassword') -> Make a hash of myPassword
+
+sqlitebrowser app.db -> Open database
+sqlite_web app.db -> Open database but better
+
 git commit -m "message" -> commit with a message
 git add . 		-> stage it i think. YOU HAVE TO DO THIS BEFORE COMMITTING
 && 			-> back to back commands

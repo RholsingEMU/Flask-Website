@@ -8,11 +8,11 @@ import sqlalchemy.orm as so
 import sqlalchemy as sa
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import LoginManager, UserMixin, logout_user
-from werkzeug.security import generate_password_hash, check_password_hash
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(basedir, "app.db") #app.db is database name
+app.secret_key = "shhhhhhhhhh"
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login = LoginManager(app)
@@ -92,21 +92,20 @@ def login_view():
 @app.route('/login', methods=['GET', 'POST'])
 def login_view():
     if request.method == 'GET':
-        return render_template('form.html')
+        return render_template('login.html')
     elif request.method == 'POST':
         if current_user.is_authenticated:
-            return redirect(url_for('index'))
+            return redirect(url_for('home'))
         else:
             user = db.session.scalar(sa.select(User).where(User.username == request.form["userName"])) 
             if user is None or not user.check_password(request.form["userPassword"]):
-                return redirect(url_for('index'))
+                #return redirect(url_for('home'))
+                return 'Login Failed'
             login_user(user)
-            return redirect(url_for('index'))
+            return redirect(url_for('home'))
     
-
-
 @app.route('/logout')
 def logout():
     logout_user()
-    return redirect(url_for('index'))
+    return redirect(url_for('home'))
 
