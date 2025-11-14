@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block linkStyle %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='style-register.css') }}">
+{% endblock %}
+
+{% block body %}
+        <main class="container">
+            <div class="grid">
+                Create your account
+                <form method="POST" action="/register">
+                    <input name="userName" type="text" class="title" placeholder="Username" aria-label="Title">
+                    <input name="userPassword" type="text" class="post-text" placeholder="Password" aria-label="Post">
+                    <button class="download" type="submit">
+                        <p class="no-margin">Create Account</p>
+                    </button>
+                </form>
+            </div>
+        </main>
+{% endblock %}

@@ -100,7 +100,8 @@ def login_view():
             user = db.session.scalar(sa.select(User).where(User.username == request.form["userName"])) 
             if user is None or not user.check_password(request.form["userPassword"]):
                 #return redirect(url_for('home'))
-                return 'Login Failed'
+                #return 'Login Failed'
+                flash('Login failed. Idiot.')
             login_user(user)
             return redirect(url_for('home'))
     
@@ -108,4 +109,37 @@ def login_view():
 def logout():
     logout_user()
     return redirect(url_for('home'))
+
+'''@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if current_user.is_authenticated:
+        return redirect(url_for('home'))
+    #form = RegistrationForm()
+    if form.validate_on_submit():
+        user = User(username=form.username.data, email=form.email.data)
+        #user = User(username=request.form["userName"], userPassword=form.request["userPassword"])
+        #user = db.session.scalar(sa.select(User).where(User.username == request.form["userName"])) 
+        user.set_password(form.password.data)
+        db.session.add(user)
+        db.session.commit()
+        flash('Congratulations, you are now a registered user!')
+        return redirect(url_for('login'))
+    return render_template('register.html', title='Register', form=form)'''
+
+@app.route('/register', methods=['GET', 'POST'])
+def register_view():
+    if request.method == 'GET':
+        return render_template('register.html')
+    elif request.method == 'POST':
+        if current_user.is_authenticated:
+            return redirect(url_for('home'))
+        else:
+            #user = db.session.scalar(sa.select(User).where(User.username == request.form["userName"])) 
+            user = User(username=request.form["userName"])
+            #user = User(username=form.username.data, email=form.email.data)
+            #user.set_password(form.password.data)
+            user.set_password(request.form["userPassword"])
+            db.session.add(user)
+            db.session.commit()
+            return redirect(url_for('home'))
 
