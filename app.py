@@ -6,6 +6,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 import sqlalchemy.orm as so
 import sqlalchemy as sa
+from sqlalchemy import ForeignKey
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import LoginManager, UserMixin, logout_user
 
@@ -28,15 +29,29 @@ class Profile(db.Model):
         pass
 
 class User(UserMixin, db.Model):
+    __tablename__ = "users"
+
     id: so.Mapped[int] = so.mapped_column(primary_key=True)
     username: so.Mapped[str] = so.mapped_column(unique=True, index=True)
-    password_hash: so.Mapped[str] = so.mapped_column(sa.String(256))
+    password_hash: so.Mapped[str] = so.mapped_column(sa.String(256), default="")
+    posts: so.Mapped[list["Post"]] = so.relationship(back_populates="author")
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
 
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
+
+class Post(db.Model):
+    __tablename__ = "posts"
+
+    id: so.Mapped[int] = so.mapped_column(primary_key=True)
+    title:so.Mapped[str] = so.mapped_column(index=True)
+    body: so.Mapped[str] = so.mapped_column(sa.String(256), default="")
+
+    user_id:so.Mapped[int] = so.mapped_column(sa.ForeignKey("users.id"))
+
+    author:so.Mapped["User"] = so.relationship(back_populates="posts")
 
 #flask db init then flask db upgrade
 
@@ -49,7 +64,7 @@ def home():
 
     #db.session.commit()
 
-    return render_template("index.html", profiles=p)
+    return render_template("index.html", profile=p)
 
 @app.route("/create-post")
 def create():
@@ -76,19 +91,6 @@ def postSubmit():
 def load_user(id):
     return db.session.get(User, int(id))
 
-'''@app.route('/login', methods=['GET', 'POST'])
-def login_view():
-    if current_user.is_authenticated:
-        return redirect(url_for('index'))
-    # request.form = LoginForm()
-        user = db.session.scalar(sa.select(User).where(User.username == request.form["userName"]))
-        if user is None or not user.check_password(request.form["userPassword"]):
-            flash('Invalid username or password')
-            return redirect(url_for('login'))
-        login_user(user, remember=form.remember_me.data)
-        return redirect(url_for('index'))
-    return render_template('login.html', title='Sign In')'''
-
 @app.route('/login', methods=['GET', 'POST'])
 def login_view():
     if request.method == 'GET':
@@ -109,22 +111,6 @@ def login_view():
 def logout():
     logout_user()
     return redirect(url_for('home'))
-
-'''@app.route('/register', methods=['GET', 'POST'])
-def register():
-    if current_user.is_authenticated:
-        return redirect(url_for('home'))
-    #form = RegistrationForm()
-    if form.validate_on_submit():
-        user = User(username=form.username.data, email=form.email.data)
-        #user = User(username=request.form["userName"], userPassword=form.request["userPassword"])
-        #user = db.session.scalar(sa.select(User).where(User.username == request.form["userName"])) 
-        user.set_password(form.password.data)
-        db.session.add(user)
-        db.session.commit()
-        flash('Congratulations, you are now a registered user!')
-        return redirect(url_for('login'))
-    return render_template('register.html', title='Register', form=form)'''
 
 @app.route('/register', methods=['GET', 'POST'])
 def register_view():

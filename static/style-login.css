@@ -86,18 +86,3 @@ body {
 .bodyTitle {
     padding: 15px;
 }
-
-.create {
-    display: flex !important;
-    flex-direction: column;
-    align-items: center;
-    border-style: solid;
-    border-width: 2px;
-    border-color: var(--border);
-    border-radius: 15px;
-    padding: 10px;
-    content: flex;
-    margin-bottom: 10px;
-    box-shadow: 2px 2px 10px var(--pico-color-black);
-    background: var(--grid);
-}
