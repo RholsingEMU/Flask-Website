@@ -19,16 +19,21 @@
                     <li><a href="/create-post" class="contrast">Post</a></li>
                 </ul>
                 <ul>
-                    <input
-                        type="search"
-                        name="search"
-                        placeholder="Search"
-                        aria-label="Search"
-                        class="search"
-                    />
+                    <form method="get" style="display: inline-flex; width: 100%">
+                        <input name="search" type="text" class="tags" placeholder="Search" aria-label="Search" style="margin-bottom: 0px;">
+                    </form>
                 </ul>
             </nav>
         </header>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
         {% block body %}{% endblock %}
     <footer class="container">
         <p class="no-margin">

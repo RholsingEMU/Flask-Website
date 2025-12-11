@@ -12,29 +12,28 @@
                     <img src="https://media.tenor.com/ua7A0OJQqpQAAAAe/waga-baga-bobo.png" height="350" width="350"/>
                 </div>
                 <div class="post-content">
-                    <h1>Title of the Post</h1>
+                    <h1>{{ post.title }}</h1>
                     <ul>
-                        <li>List entry</li>
-                        <li>List entry</li>
+                        <li>Posted by {{ post.author }}</li>
+                        <li>{{ post.likes }} Likes</li>
                     </ul>
-                    <p>Desc of the post</p>
+                    <p>Tags</p>
                     <div class="tag-box">
-                        <p class="no-margin">Box for tags</p>
+                        <p class="no-margin">{{ post.tags }}</p>
                     </div>
                 </div>
             </div>
             <hr></hr>
             <div class="long-desc">
-                <p class="no-margin">Longer Desc</p>
+                <p class="no-margin">{{ post.body }}</p>
             </div>
             <hr></hr>
-            <div class="top" class="no-margin">
-                <button class="download">
-                    <p class="no-margin">View Calendar</p>
-                </button>
-                <button class="message">
-                    <p  class="no-margin">Message</p>
-                </button>
+            <div class="top" class="no-margin" style="justify-content: center;">
+                <form method="post" action="{{ url_for('like_post', post_id=post.id) }}">
+                    <button class="download" type="submit" >
+                        <span class="no-margin">I enjoy this</span>
+                    </button>
+                </form>
             </div>
         </div>
     </main>

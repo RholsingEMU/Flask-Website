@@ -14,10 +14,11 @@
                 <input type="file">
                 <!--<p style="margin-bottom: 0px;">Upload File</p>
                 <input type="file">-->
-                <div class="choose-tag">
-                    <p class="no-margin">Add tags...</p>
-                </div>
-                <form method="POST" action="/submit">
+                <form method="POST" action="/create-post">
+                    <div class="choose-tag">
+                        <p class="no-margin">Add tags...</p>
+                        <input name="tags" type="text" class="tags" placeholder="Write tags" aria-label="Tags">
+                    </div>
                     <input name="postName" type="text" class="title" placeholder="Title" aria-label="Title">
                     <input name="postDesc" type="text" class="post-text" placeholder="Post" aria-label="Post">
                     <button class="download" type="submit">

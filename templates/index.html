@@ -8,46 +8,56 @@
 <!--Please ignrore the image. It is a placeholder.-->
     <main class="container">
         <div class="grid">
-            <div class="tags">
-                tags
-            </div>
-            <div class="sort">
-                Sort by:
-                <fieldset class="sort-dropdown">
-                    <label>
-                        <input type="radio" name="post-sort" checked />
-                        Top this week
-                    </label>
-                    <label>
-                        <input type="radio" name="post-sort" />
-                        Top of all time
-                    </label>
-                    <label>
-                        <input type="radio" name="post-sort" />
-                        New
-                    </label>
-                    <label>
-                        <input type="radio" name="post-sort" />
-                        Hot
-                    </label>
-                </fieldset>
-            </div>
+            <form method="get" style="display: inline-flex; width: 100%">
+                <div class="tags">
+                    <input name="tags" type="text" class="tags" placeholder="Write tags" aria-label="Tags" style="margin-bottom: 0px;">
+                    <button class="sort-dropdown" type="submit">
+                        <p>Select</p>
+                    </button>
+                </div>
+                <div class="sort">
+                    <p style="margin-bottom: 0px;">Sort by:</p>
+                    <fieldset class="sort-dropdown">
+                        <label>
+                            <input type="radio" name="post-sort" value = "option1" checked />
+                            By most likes
+                        </label>
+                        <label>
+                            <input type="radio" name="post-sort" value = "option2"/>
+                            By most recent
+                        </label>
+                        <label>
+                            <input type="radio" name="post-sort" value = "option3"/>
+                            By least likes
+                        </label>
+                        <label>
+                            <input type="radio" name="post-sort" value = "option4"/>
+                            By least recent
+                        </label>
+                        <button class="sort-dropdown" style="position: relative;" type="submit">
+                            <p>Select</p>
+                        </button>
+                    </fieldset>
+                </div>
+            </form>
         </div>
         <hr></hr>
-        {% for obj in profiles %}
+        {% for obj in posts %}
         <div class="grid">
-            <a href="/profile">
+            <a href="{{ url_for('profile', post_id=obj.id) }}">
                 <div class="post-image">
                     <img src="https://media.tenor.com/ua7A0OJQqpQAAAAe/waga-baga-bobo.png" height="350" width="350"/>
                 </div>
             </a>
             <div class="post-content">
-                <button class="heart-btn">{{ obj.likes }}❤️</button>
-                <a href="/profile">
-                    <h1>{{ obj.name }}</h1>
+                <a href="{{ url_for('profile', post_id=obj.id) }}">
+                    <button class="heart-btn">{{ obj.likes }}❤️</button>
+                </a>
+                <a href="{{ url_for('profile', post_id=obj.id) }}">
+                    <h1>{{ obj.title }}</h1>
                 </a>
                 <hr></hr>
-                <p>{{ obj.desc }}</p>
+                <p>{{ obj.body }}</p>
             </div>
         </div>
         {% endfor %}
